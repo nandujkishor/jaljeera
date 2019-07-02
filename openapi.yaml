@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  title: Jaljeera
+  version: '0.1'
+paths:
+  /events:
+    get:
+      summary: List all events
+      operationId: app.events.list
+      responses:
+        '200':
+          description: Events list
+          content:
+
+
+# Decide between using Connexion's
+# inbuilt security method to implement
+# authentitcation or ignore and directly
+# access the header using the connexion
+# provided alias
