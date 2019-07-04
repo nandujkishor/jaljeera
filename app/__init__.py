@@ -6,9 +6,9 @@ import connexion
 
 app = connexion.App(__name__, specification_dir='./')
 app.add_api('openapi.yaml')
+app.app.config.from_object(Config)
+db = SQLAlchemy(app.app)
+migrate = Migrate(app.app, db)
 fapp = app.app
-fapp.config.from_object(Config)
-db = SQLAlchemy(fapp)
-migrate = Migrate(app, db)
 
 from app import routes, models, events, collections

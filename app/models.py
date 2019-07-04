@@ -5,7 +5,7 @@ class Events(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(600), nullable=False) # Max 600 characters
     tagline = db.Column(db.String(200)) # Max 200 characters
-    cat = db.Column(db.Integer, db.ForeignKey('events_cat.id'), nullable=False)
+    cat = db.Column(db.Integer, db.ForeignKey('events.id'), nullable=False)
     organiser = db.Column(db.String(20), nullable=False)
     collection = db.Column(db.Integer, db.ForeignKey('collections.id'))
 

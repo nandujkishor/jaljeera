@@ -1,1 +1,5 @@
 venv/
+migrations/
+jaljeera.db
+__pycache__
+.pyc
