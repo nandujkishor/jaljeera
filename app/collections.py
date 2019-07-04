@@ -1,11 +1,12 @@
 # Events module
 
 from flask import Flask, jsonify
-from app import app, db
+from app import app
 
 def list():
-    coll = Collections.query.all()
-     return jsonify(coll)
+    # coll = Collections.query.all()
+    # return jsonify(coll)
+    return "Hello"
 
 def get(id):
     return "Event"

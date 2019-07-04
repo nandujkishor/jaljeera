@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Jaljeera
+  version: '0.1'
+  description: Jaljeera events service
+paths:
+  /events:
+    get:
+      summary: List all events
+      operationId: app.events.list
+      responses:
+        '200':
+          description: Events list
+    post:
+      summary: Create a new event
+      operationId: app.events.create
+      responses:
+        '200':
+          description: Event created
+  /events/{id}:
+    get:
+      summary: Get detailed data for an event
+      operationId: app.events.get
+      parameters:
+      - name: id
+        description: Event identifier
+        in: path
+        required: true
+        example: 1
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Event data (single)
+    put:
+      summary: Update event data
+      operationId: app.events.update
+      parameters:
+      - name: id
+        description: Event identifier
+        in: path
+        required: true
+        example: 1
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Event updated
+    delete:
+      summary: Delete a specific event
+      operationId: app.events.delete
+      parameters:
+      - name: id
+        description: Event identifier
+        in: path
+        required: true
+        example: 1
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Event deleted
+  /collections:
+    get:
+      summary: List all collections
+      operationId: app.collections.list
+      responses:
+        '200':
+          description: List of collections
+    post:
+      summary: Create a new collection
+      operationId: app.collections.create
+      responses:
+        '200':
+          description: Collection created
+  /collections/{id}:
+    get:
+      summary: Get detailed data on a collection
+      operationId: app.collections.get
+      parameters:
+      - name: id
+        description: Collection identifier
+        in: path
+        required: true
+        example: 1
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Collection details
+    put:
+      summary: Update collection data
+      operationId: app.collections.update
+      parameters:
+      - name: id
+        description: Collection identifier
+        in: path
+        required: true
+        example: 1
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Collection updated
+    delete:
+      summary: Delete a collection
+      operationId: app.collections.delete
+      parameters:
+      - name: id
+        description: Collection identifier
+        in: path
+        required: true
+        example: 1
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Collection deleted
+
+# Decide between using Connexion's
+# inbuilt security method to implement
+# authentitcation or ignore and directly
+# access the header using the connexion
+# provided alias
