@@ -26,10 +26,10 @@ class Tags(db.Model):
 
 class TagstoEvents(db.Model):
     # One to Many for tag to events: P1 of of many to many
-    tagid = db.Column(db.Integer, primary_key=True)
-    eid = db.Column(db.Integer, primary_key=True)
+    tagid = db.Column(db.Integer, primary_key=True, db.Foreignkey('tags.id'))
+    eid = db.Column(db.Integer, primary_key=True, db.Foreignkey('events.id'))
 
 class EventstoTags(db.Model):
     # One to Many for tag to events: P1 of of many to many
-    eid = db.Column(db.Integer, primary_key=True)
-    tagid = db.Column(db.Integer, primary_key=True)
+    eid = db.Column(db.Integer, primary_key=True, db.Foreignkey('events.id'))
+    tagid = db.Column(db.Integer, primary_key=True, db.Foreignkey('tags.id'))

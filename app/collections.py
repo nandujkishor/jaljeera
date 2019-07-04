@@ -4,8 +4,8 @@ from flask import Flask, jsonify
 from app import app, db
 
 def list():
-    events = Events.query.all()
-    return jsonify(events)
+    coll = Collections.query.all()
+     return jsonify(coll)
 
 def get(id):
     return "Event"
