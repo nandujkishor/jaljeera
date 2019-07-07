@@ -1,18 +1,19 @@
 # Events module
 
 from flask import Flask, jsonify
-from app import app
+from app import app, db
+from app.models import Events
 
 def list():
-    # events = Events.query.all()
-    # return jsonify(events)
-    return "Hello"
+    events = Events.query.all()
+    return jsonify(events)
 
 def get(id):
-    return "Event"
+    event = Event.query.filter_by(id=id).first()
+    return jsonify(event)
 
 def create():
-    return "Event created"
+    event = Event()
 
 def update(id):
     return "Event updated"
