@@ -7,7 +7,7 @@ from app.models import Events
 def list():
     events = Events.query.all()
     return jsonify(events)
-
+   
 def get(id):
     event = Event.query.filter_by(id=id).first()
     return jsonify(event)
